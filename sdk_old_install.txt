@@ -27,3 +27,66 @@ system-images;android-22;google_apis;x86 => 15
 system-images;android-22;google_apis;x86_64 => 15
 tools => 26.0.2
 
+
+
+Vá em [Android Studio > Downloads](https://developer.android.com/studio/index.html#linux-tools)
+
+Espere a página carregar , clique em "I have read and agree with the above terms and conditions" (aceitar) e  faça o download.
+
+Depois de baixado criar a seguinte estrutura de pastas (você pode fazer a sua.)
+
+mkdir /opt/android/android-sdk-linux
+
+
+
+Dentro da pasta `android-sdk-linux` descompacte o conteudo do zip baixado, o resultado final será:
+
+
+$ cd /opt/android/android-sdk-linux/tools
+$ ls
+android  bin  emulator  emulator-check  lib  mksdcard  monitor  NOTICE.txt  package.xml  proguard  source.properties  support
+
+
+editar o /etc/profile
+
+export ANDROID_HOME=/opt/android/android-sdk-linux
+export ANDROID_SDK_ROOT=/opt/android/android-sdk-linux
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+
+
+
+
+```terminal
+
+sdkmanager "add-ons;addon-google_apis-google-22"
+sdkmanager "build-tools;22.0.1"
+sdkmanager "platforms;android-22"
+sdkmanager "sources;android-22"
+sdkmanager "system-images;android-22;default;armeabi-v7a"
+sdkmanager "system-images;android-22;default;x86"
+sdkmanager "system-images;android-22;default;x86_64"
+sdkmanager "system-images;android-22;google_apis;armeabi-v7a"
+sdkmanager "system-images;android-22;google_apis;x86"
+sdkmanager "system-images;android-22;google_apis;x86_64"
+sdkmanager "platform-tools"
+sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.0-alpha8"
+sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.0-alpha8"
+sdkmanager "emulator"
+
+```
+
+
+Criar o avd
+
+```bash
+$ avdmanager list target 
+get ID 1
+avdmanager create avd -n bruno -k "system-images;android-22;google_apis;x86_64" --tag "google_apis" --device 1
+$ 
+```
+
+sudo /opt/android/android-sdk-linux/tools/emulator -avd "Nexus_5_API_22"
+
+adb  install ./build/outputs/apk/meuApp-debug.apk
