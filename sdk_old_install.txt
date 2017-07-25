@@ -1,0 +1,29 @@
+
+
+Installed packages:
+-------------------------------------
+add-ons;addon-google_apis-google-22 => 1
+build-tools;24.0.2 => 24.0.2
+build-tools;25.0.0 => 25.0.0
+build-tools;26.0.0 => 26.0.0
+docs => 1
+emulator => 26.1.2
+extras;android;m2repository => 47.0.0
+extras;google;google_play_services => 42
+extras;google;m2repository => 55
+extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.0-alpha8 => 1
+extras;m2repository;com;android;support;constraint;constraint-layout;1.0.0-alpha8\ => 1
+patcher;v4 => 1
+platform-tools => 26.0.0
+platforms;android-22 => 2
+sources;android-22 => 1
+system-images;android-22;android-tv;armeabi-v7a => 1
+system-images;android-22;android-tv;x86 => 3
+system-images;android-22;default;armeabi-v7a => 2
+system-images;android-22;default;x86 => 6
+system-images;android-22;default;x86_64 => 6
+system-images;android-22;google_apis;armeabi-v7a => 14
+system-images;android-22;google_apis;x86 => 15
+system-images;android-22;google_apis;x86_64 => 15
+tools => 26.0.2
+
